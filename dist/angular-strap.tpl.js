@@ -1,6 +1,6 @@
 /**
  * angular-strap
- * @version v2.1.2 - 2014-10-19
+ * @version v2.1.2 - 2015-02-11
  * @link http://mgcrea.github.io/angular-strap
  * @author Olivier Louvignes (olivier@mg-crea.com)
  * @license MIT License, http://www.opensource.org/licenses/MIT
@@ -8,24 +8,10 @@
 (function(window, document, undefined) {
 'use strict';
 
-// Source: alert.tpl.js
-angular.module('mgcrea.ngStrap.alert').run(['$templateCache', function($templateCache) {
-
-  $templateCache.put('alert/alert.tpl.html', '<div class="alert" ng-class="[type ? \'alert-\' + type : null]"><button type="button" class="close" ng-if="dismissable" ng-click="$hide()">&times;</button> <strong ng-bind="title"></strong>&nbsp;<span ng-bind-html="content"></span></div>');
-
-}]);
-
 // Source: aside.tpl.js
 angular.module('mgcrea.ngStrap.aside').run(['$templateCache', function($templateCache) {
 
   $templateCache.put('aside/aside.tpl.html', '<div class="aside" tabindex="-1" role="dialog"><div class="aside-dialog"><div class="aside-content"><div class="aside-header" ng-show="title"><button type="button" class="close" ng-click="$hide()">&times;</button><h4 class="aside-title" ng-bind="title"></h4></div><div class="aside-body" ng-bind="content"></div><div class="aside-footer"><button type="button" class="btn btn-default" ng-click="$hide()">Close</button></div></div></div></div>');
-
-}]);
-
-// Source: dropdown.tpl.js
-angular.module('mgcrea.ngStrap.dropdown').run(['$templateCache', function($templateCache) {
-
-  $templateCache.put('dropdown/dropdown.tpl.html', '<ul tabindex="-1" class="dropdown-menu" role="menu"><li role="presentation" ng-class="{divider: item.divider}" ng-repeat="item in content"><a role="menuitem" tabindex="-1" ng-href="{{item.href}}" ng-if="!item.divider && item.href" target="{{item.target || \'\'}}" ng-bind="item.text"></a> <a role="menuitem" tabindex="-1" href="javascript:void(0)" ng-if="!item.divider && item.click" ng-click="$eval(item.click);$hide()" ng-bind="item.text"></a></li></ul>');
 
 }]);
 
@@ -36,10 +22,17 @@ angular.module('mgcrea.ngStrap.datepicker').run(['$templateCache', function($tem
 
 }]);
 
-// Source: modal.tpl.js
-angular.module('mgcrea.ngStrap.modal').run(['$templateCache', function($templateCache) {
+// Source: dropdown.tpl.js
+angular.module('mgcrea.ngStrap.dropdown').run(['$templateCache', function($templateCache) {
 
-  $templateCache.put('modal/modal.tpl.html', '<div class="modal" tabindex="-1" role="dialog"><div class="modal-dialog"><div class="modal-content"><div class="modal-header" ng-show="title"><button type="button" class="close" ng-click="$hide()">&times;</button><h4 class="modal-title" ng-bind="title"></h4></div><div class="modal-body" ng-bind="content"></div><div class="modal-footer"><button type="button" class="btn btn-default" ng-click="$hide()">Close</button></div></div></div></div>');
+  $templateCache.put('dropdown/dropdown.tpl.html', '<ul tabindex="-1" class="dropdown-menu" role="menu"><li role="presentation" ng-class="{divider: item.divider}" ng-repeat="item in content"><a role="menuitem" tabindex="-1" ng-href="{{item.href}}" ng-if="!item.divider && item.href" target="{{item.target || \'\'}}" ng-bind="item.text"></a> <a role="menuitem" tabindex="-1" href="javascript:void(0)" ng-if="!item.divider && item.click" ng-click="$eval(item.click);$hide()" ng-bind="item.text"></a></li></ul>');
+
+}]);
+
+// Source: alert.tpl.js
+angular.module('mgcrea.ngStrap.alert').run(['$templateCache', function($templateCache) {
+
+  $templateCache.put('alert/alert.tpl.html', '<div class="alert" ng-class="[type ? \'alert-\' + type : null]"><button type="button" class="close" ng-if="dismissable" ng-click="$hide()">&times;</button> <strong ng-bind="title"></strong>&nbsp;<span ng-bind-html="content"></span></div>');
 
 }]);
 
@@ -47,6 +40,13 @@ angular.module('mgcrea.ngStrap.modal').run(['$templateCache', function($template
 angular.module('mgcrea.ngStrap.popover').run(['$templateCache', function($templateCache) {
 
   $templateCache.put('popover/popover.tpl.html', '<div class="popover"><div class="arrow"></div><h3 class="popover-title" ng-bind="title" ng-show="title"></h3><div class="popover-content" ng-bind="content"></div></div>');
+
+}]);
+
+// Source: modal.tpl.js
+angular.module('mgcrea.ngStrap.modal').run(['$templateCache', function($templateCache) {
+
+  $templateCache.put('modal/modal.tpl.html', '<div class="modal" tabindex="-1" role="dialog"><div class="modal-dialog"><div class="modal-content"><div class="modal-header" ng-show="title"><button type="button" class="close" ng-click="$hide()">&times;</button><h4 class="modal-title" ng-bind="title"></h4></div><div class="modal-body" ng-bind="content"></div><div class="modal-footer"><button type="button" class="btn btn-default" ng-click="$hide()">Close</button></div></div></div></div>');
 
 }]);
 

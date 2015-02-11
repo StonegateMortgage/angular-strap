@@ -1,6 +1,6 @@
 /**
  * angular-strap
- * @version v2.1.2 - 2014-10-19
+ * @version v2.1.2 - 2015-02-11
  * @link http://mgcrea.github.io/angular-strap
  * @author Olivier Louvignes (olivier@mg-crea.com)
  * @license MIT License, http://www.opensource.org/licenses/MIT
@@ -162,7 +162,7 @@ angular.module('mgcrea.ngStrap.button', [])
         };
 
         // view -> model
-        element.bind(options.toggleEvent, function() {
+        activeElement.bind(options.toggleEvent, function() {
           scope.$apply(function () {
             // console.warn('!click', element.attr('value'), 'controller.$viewValue', typeof controller.$viewValue, controller.$viewValue, 'controller.$modelValue', typeof controller.$modelValue, controller.$modelValue);
             controller.$setViewValue(value);
